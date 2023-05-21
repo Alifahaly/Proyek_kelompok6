@@ -15,11 +15,12 @@ Semoga sehat selalu dan semangat kuliahnya kak dan bang.
 
 Heru bagus cahyo (2208108010053)
 
-kesan
+**#kesan**
 kesan saya di lab ini menjadi lab yang ga menegangkann, dan tentunya bisa sedikit santai.
 
-pesan
+**#pesan**
 dimohon ketika mengajar bisa dibedakan ketika serius dan bercanda, karna ketik lagi ngajar aslab kebanyakan becanda seperti tertawa
+
 
 Ahmad Haikal Ashshiddiqi (2208108010051)
 
