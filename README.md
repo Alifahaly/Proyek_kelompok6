@@ -11,3 +11,12 @@ Belajar nya jadi lebih menyenangkan karena ada tanya jawab dan lain-lain.
 Selain itu, tetaplah bersikap ramah dan sabar ketika menghadapi mahasiswa/mahasiswi.
 Terimakasih kakak dan abang atas semua yang telah  diajarkan kepada kami. 
 Semoga sehat selalu dan semangat kuliahnya kak dan bang.
+
+
+Heru bagus cahyo
+
+kesan
+kesan saya di lab ini menjadi lab yang ga menegangkann, dan tentunya bisa sedikit santai.
+
+pesan
+dimohon ketika mengajar bisa dibedakan ketika serius dan bercanda, karna ketik lagi ngajar aslab kebanyakan becanda sepeerti tertawa
