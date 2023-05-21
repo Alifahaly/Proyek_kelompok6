@@ -115,3 +115,89 @@ int quiz_15_soal()
         "Rp 250.000.000",
         "Rp 500.000.000",
         "Rp 1000000000"};
+
+    
+    struct Soal soal_soal[15] = {
+        {"Siapa pendiri Partai Komunis Indonesia (PKI)?", "Tan Malaka", "Sukarno", "Aidit", "Musso", 'D'},
+        {"Kapan PKI didirikan?", "1945", "1920", "1949", "1965", 'B'},
+        {"Apa tujuan utama PKI pada awal berdirinya?", "Mempertahankan keberadaan kolonial Belanda", "Menggalang persatuan dan kesatuan bangsa Indonesia", "Mewujudkan sistem kapitalis di Indonesia", "Menegakkan paham komunisme di Indonesia", 'B'},
+        {"Apa yang menjadi alasan pemerintah Indonesia membubarkan PKI pada tahun 1965?", "Terlibat dalam kegiatan terorisme", "Melanggar hukum internasional", "Diduga terlibat dalam percobaan kudeta", "Memiliki persaingan politik yang ketat dengan pemerintah", 'C'},
+        {"Apa nama konferensi  pada tahun 1965 yang diduga sebagai pemicu pembubaran PKI?", "Konferensi Bandung", "Konferensi Yogyakarta", "Konferensi Lubang Buaya", "Konferensi Malino", 'C'},
+        {"Bagaimana kondisi PKI setelah pembubaran pada tahun 1965?", "Tetap beroperasi secara terbuka", "Beralih ke kegiatan gerilya", "Membubarkan diri secara sukarela", "Menjadi partai oposisi legal", 'B'},
+        {"Apa yang menjadi dampak pembubaran PKI terhadap anggota dan simpatisannya?", "Penahanan massal", "Pembunuhan massal", "Pengasingan massal", "Semua jawaban di atas benar", 'D'},
+        {"Pada tahun berapakah PKI dinyatakan sebagai organisasi terlarang di Indonesia?", "1965", "1978", "1998", "2004", 'A'},
+        {"Apa yang menjadi lambang resmi PKI?", "Palu dan arit", "Burung Garuda", "Bintang Merah", "Pohon Beringin", 'A'},
+        {"Apa yang menjadi pandangan PKI terhadap sistem kapitalis?", "Menentangnya sepenuhnya", "Menerima dengan syarat tertentu", "Netral", "Tidak ada jawaban yang benar", 'A'},
+        {"Apa nama tokoh PKI yang terkenal sebagai pemimpin dalam pemberontakan Madiun pada tahun 1948?", "Sukarno", "Tan Malaka", "Aidit", "Musso", 'D'},
+        {"Apa alasan PKI mengalami kejatuhan popularitas di Indonesia sebelum pembubaran pada tahun 1965?", "Terlibat dalam skandal korupsi", "Keberhasilan pemerintah dalam membangun ekonomi", "Perpecahan internal di dalam partai", "Semua jawaban di atas benar", 'B'},
+        {"Apa yang menjadi pandangan PKI terhadap agama?", "Menentang agama secara total", "Mengakui keberadaan agama sebagai urusan pribadi", "Menganjurkan agama sebagai landasan moral", "Tidak ada jawaban yang benar", 'B'},
+        {"Apa nama rezim pemerintahan yang didirikan oleh PKI di Madiun pada tahun 1948?", "Republik Indonesia", "Negara Indonesia Timur", "Republik Rakyat Indonesia", "Negara Indonesia Serikat", 'C'},
+        {"Bagaimana hubungan antara PKI dengan Gerakan 30 September (G30S) pada tahun 1965?", "PKI terlibat langsung dalam G30S", "PKI tidak memiliki keterlibatan dalam G30S", "PKI memberikan dukungan moral kepada G30S", "Hubungan antara PKI dan G30S masih diperdebatkan hingga saat ini", 'A'}};
+
+    for (int i = 0; i < sizeof soal_soal / sizeof soal_soal[0]; i++)
+    {
+        menampilkan_level(peringkat_uang, i, sizeof(peringkat_uang) / sizeof(peringkat_uang[0]));
+
+        printf("\x001b[33mLEVEL %d\x001b[00m\n\n", i + 1);
+
+        // menampung nilai A B C D
+        char jawaban_user;
+
+        //  berisi y atau T
+        char ingin_melanjutkan;
+
+        // menyimpan apakah benar atau tidak
+        bool apakah_benar;
+
+        // mengambil soal berdasarkan index
+        struct Soal soal_saat_ini = soal_soal[i];
+
+        //  menampilkan soal
+        print_per_soal(soal_saat_ini);
+        printf(":> ");
+
+        // mengambil jawaban dari user
+        scanf("%s", &jawaban_user);
+
+        // pengecekan jawaban
+        apakah_benar = mengecek_jawaban(soal_saat_ini, jawaban_user);
+
+        if (!apakah_benar)
+        {
+            printf("\x001b[31mMAAF JAWABAN ANDA KURANG TEPAT\x001b[00m\nSAYANGNYA UANG ANDA TELAH HANGUS\n");
+            break;
+        }
+        else
+        {
+            if (i == (sizeof peringkat_uang / sizeof peringkat_uang[0]) - 1)
+            {
+                printf("\x001B[H\x001B[2J");
+                printf("\nSELAMAT ANDA MENDAPATKAN HADIAH SEBESAR \x001b[32m%s\x001b[00m\n\n", peringkat_uang[i]);
+                break;
+            }
+
+            printf("~~{ SELAMAT JAWABAN ANDA TEPAT }~~\nUANG ANDA SAAT INI ADALAH \x001b[32m%s\x001b[00m\n", peringkat_uang[i]);
+            printf("Apakah anda ingin melanjutkan?(Y/T) ");
+            scanf("%s", &ingin_melanjutkan);
+
+            if (ingin_melanjutkan == 't' || ingin_melanjutkan == 'y')
+            {
+                if (ingin_melanjutkan == 't')
+                {
+                    printf("\x001B[H\x001B[2J");
+                    printf("\n\x1b[5mSELAMAT ANDA MENDAPATKAN HADIAH SEBESAR \x001b[32m%s\x001b[00m\n\n", peringkat_uang[i]);
+                    break;
+                }
+            }
+            else
+            {
+                return 1;
+            }
+            // untuk membersihkan terminal
+            printf("\x001B[H");
+            // untuk memindahkan cursor ke bagian paling atas dari terminal
+            printf("\x001B[2J");
+        }
+    }
+    return 0;
+}
