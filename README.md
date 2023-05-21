@@ -15,21 +15,21 @@ Semoga sehat selalu dan semangat kuliahnya kak dan bang.
 
 Heru bagus cahyo (2208108010053)
 
-**#kesan**
+**#Kesan** :
 kesan saya di lab ini menjadi lab yang ga menegangkann, dan tentunya bisa sedikit santai.
 
-**#pesan**
+**#Pesan** :
 dimohon ketika mengajar bisa dibedakan ketika serius dan bercanda, karna ketik lagi ngajar aslab kebanyakan becanda seperti tertawa
 
 
 Ahmad Haikal Ashshiddiqi (2208108010051)
 
-**#Kesan** 
+**#Kesan** :
   Saya merasa lab ini cukup menyenangkan dengan aslab yang ceria, ramah dan baik. 
   saya merasa beruntung dapat terpilih sebagai penghuni Lab Alprog Shift II terutama karena aslabnya kak Sofia dan bang Adit, 
   walaupun awalnya kaku namun semua berjalan baik dengan penuh kesantaian.
 
-**#pesan** 
+**#Pesan** :
   Saya berharap bang Adit dan kak Sofia tetap menjadi aslab yang ramah dan ceria.
   
   salam santai
