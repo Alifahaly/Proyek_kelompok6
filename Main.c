@@ -95,3 +95,23 @@ void print_tutorial()
     printf("2. Setiap soal memiliki satu jawaban yang benar (A/B/C/D)\n");
     printf("3. Jika jawaban anda benar, maka hadiah anda akan bertambah. Jika jawaban salah, permainan berakhir dan Anda kehilangan semua hadiah.\n\n");
 }
+
+// Sistem quiz
+int quiz_15_soal()
+{
+    char peringkat_uang[15][15] = {
+        "Rp 100.000",
+        "Rp 200.000",
+        "Rp 300.000",
+        "Rp 500.000",
+        "Rp 1.000.000",
+        "Rp 2.000.000",
+        "Rp 4.000.000",
+        "Rp 8.000.000",
+        "Rp 16.000.000",
+        "Rp 32.000.000",
+        "Rp 64.000.000",
+        "Rp 125.000.000",
+        "Rp 250.000.000",
+        "Rp 500.000.000",
+        "Rp 1000000000"};
