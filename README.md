@@ -30,6 +30,7 @@ Ahmad Haikal Ashshiddiqi (2208108010051)
   walaupun awalnya kaku namun semua berjalan baik dengan penuh kesantaian.
 
 **#pesan** 
-  Saya berharap bang Adit dan kak Sofia tetap menjadi aslab yang ramah dan ceria serta penuh keromantisan
+  Saya berharap bang Adit dan kak Sofia tetap menjadi aslab yang ramah dan ceria.
+  
   salam santai
 
