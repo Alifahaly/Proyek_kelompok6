@@ -13,7 +13,7 @@ Terimakasih kakak dan abang atas semua yang telah  diajarkan kepada kami.
 Semoga sehat selalu dan semangat kuliahnya kak dan bang.
 
 
-Heru bagus cahyo
+Heru bagus cahyo (2208108010053)
 
 kesan
 kesan saya di lab ini menjadi lab yang ga menegangkann, dan tentunya bisa sedikit santai.
