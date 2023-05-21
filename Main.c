@@ -4,43 +4,46 @@
 #include <unistd.h>
 #include <string.h>
 
-// Fungsi untuk memeriksa apakah username dan password valid
-bool isLoginValid(const char *username, const char *password)
-{
-    // Cek apakah username dan password sesuai dengan data yang valid
-    const char *username_benar = "kelompok6";
-    const char *password_benar = "pastijuara";
 
-    if (strcmp(username, username_benar) == 0 && strcmp(password, password_benar) == 0)
-        return true;
-    else
-        return false;
-}
-
-// Fungsi untuk melakukan login
-bool login()
-{
+struct User {
     char username[50];
     char password[50];
+};
 
-    printf("Masukkan username: ");
-    scanf("%s", username);
+bool isLoginValid(const char *username, const char *password)
+{
+    // Ubah lokasi file login.txt sesuai dengan kebutuhan Anda
+    FILE *file = fopen("lpala.txt", "r");
+    if (file == NULL) {
+        printf("File login.txt tidak ditemukan.\n");
+        return false;
+    }
 
-    printf("Masukkan password: ");
-    scanf("%s", password);
+    struct User user;
+    while (fread(&user, sizeof(struct User), 1, file)) {
+        if (strcmp(username, user.username) == 0 && strcmp(password, user.password) == 0) {
+            fclose(file);
+            return true;
+        }
+    }
 
-    if (isLoginValid(username, password))
-    {
+    fclose(file);
+    return false;
+}
+
+bool login(const char *username, const char *password)
+{
+    if (isLoginValid(username, password)) {
         printf("Login berhasil!\n");
         return true;
-    }
-    else
-    {
+    } else {
         printf("Login gagal. Username atau password salah.\n");
         return false;
     }
-};
-// type data untuk menampung soal
+}
+
+
+// Type data untuk menampung soal
 struct Soal
 {
     char pertanyaan[100];
@@ -51,13 +54,13 @@ struct Soal
     char pilihanBenar;
 };
 
-// untuk mengecek jawaban
+// Untuk mengecek jawaban
 bool mengecek_jawaban(struct Soal soal, char pilihan)
 {
     return soal.pilihanBenar == toupper(pilihan);
 }
 
-//  untuk menampilkan level
+// Untuk menampilkan level
 void menampilkan_level(char levels[][15], char level_saat_ini, int jml_level)
 {
     for (int i = 0; i < jml_level; i++)
@@ -74,7 +77,7 @@ void menampilkan_level(char levels[][15], char level_saat_ini, int jml_level)
     printf("\n");
 }
 
-// menampikan soal
+// Menampilkan soal
 void print_per_soal(struct Soal soal)
 {
     printf("%s\n", soal.pertanyaan);
@@ -84,7 +87,7 @@ void print_per_soal(struct Soal soal)
     printf("D. %s\n", soal.pilihan4);
 }
 
-// untuk menampilkan tutorial
+// Menampilkan tutorial
 void print_tutorial()
 {
     printf("Selamat datang di Milioner CLI!\n\n");
