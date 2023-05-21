@@ -201,3 +201,76 @@ int quiz_15_soal()
     }
     return 0;
 }
+
+// untuk menampilkan menu utama
+void print_menu_utama()
+{
+    printf("\x001b[36m");
+    printf("+=====================================+\n");
+    printf("|          SELAMAT DATANG DI          |\n");
+    printf("|       TES WAWASAN KEBANGSAAN        |\n");
+    printf("|              KELOMPOK 6             |\n");
+    printf("+=====================================+\n");
+    printf("1. mulai\n");
+    printf("2. tutorial\n");
+    printf("3. keluar\n: ");
+    printf("\x001b[00m");
+}
+
+// main function
+int main(int argc, char *argv[])
+{
+    if (argc != 3) {
+        printf("Argumen tidak valid. Gunakan: ./program <username> <password>\n");
+        return 1;
+    }
+
+    char *username = argv[1];
+    char *password = argv[2];
+
+    login(username, password);
+
+    while (1) {
+        printf("\x001B[H\x001B[2J");
+
+        int yang_dipilihan;
+        char apakah_ingin_melanjutkan;
+
+        print_menu_utama();
+        scanf("%d", &yang_dipilihan);
+        printf("\x001B[H\x001B[2J");
+        if (yang_dipilihan == 1)
+        {
+            quiz_15_soal();
+            printf("\nApakah anda ingin kembali ke menu utama?(Y/T)");
+            scanf(" %c", &apakah_ingin_melanjutkan);
+            if (tolower(apakah_ingin_melanjutkan) == 'y')
+            {
+                continue;
+            }
+            break;
+        }
+        else if (yang_dipilihan == 2)
+        {
+            print_tutorial();
+            printf("Tekan tombol Enter untuk melanjutkan...\n");
+            fflush(stdin);
+            getchar();
+            while (1)
+            {
+                if (getchar() != '\n')
+                {
+                    continue;
+                }
+                break;
+            }
+        }
+        else
+        {
+            return 0;
+        }
+        printf("\x001B[H\x001B[2J");
+    }
+
+    return 0;
+}
